@@ -1,0 +1,23 @@
+Mode: Built-in image_gen edit (precise-object-edit)
+Edit target: D:/synthart/beofre.png
+Output: D:/synthart/assets/hero-clean-v2.png
+
+Final prompt:
+Use case: precise-object-edit
+Asset type: clean background plate for a website hero brush handoff animation.
+Input image 1 is the EDIT TARGET, original 1672 by 941 landscape artwork. Preserve its exact composition and framing.
+Primary request: Remove ONLY the entire paintbrush held in the human hand. Erase its complete dark-blue handle, silver ferrule, and all vivid yellow-orange-pink bristles. The brush extends diagonally from approximately (384,509) in the left palm to the bristle tip at (989,245) on this 1672x941 image.
+Restore the skin on the human fingers and palm wherever the brush overlapped them; restore the subtle dark glowing background everywhere else behind the brush. Retain the thumb and fingers and their original pose even though now empty.
+Constraints: All other artwork must remain exactly the same: the left human hand pose, right OPEN robot hand pose and location, colorful sweeping paint strokes on the left, circuitry graphics on the right, dark textured atmosphere, dots, lights and grid. Do not put the brush in the robot hand. Do not close or change the robot hand. Do not add anything. Keep original sharp illustration style, colors, and lighting. Preserve original 1672x941 framing and aspect. No text. No watermarks.
+
+Mode: Built-in image_gen edit (precise-object-edit)
+Edit target: D:/synthart/after .png
+Output: D:/synthart/assets/hero-after-clean-v2.png
+
+Final prompt:
+Use case: precise-object-edit
+Asset type: clean background plate for a website hero brush handoff animation.
+Input image 1 is the EDIT TARGET, original 1672 by 941 landscape artwork. Preserve its exact composition and framing.
+Primary request: Remove ONLY the entire paintbrush held in the robot hand. Erase its complete dark-blue handle, silver ferrule, and vivid yellow-orange-pink bristles. The brush extends diagonally from its handle tip at approximately (676,543) to the bristle tip at (1157,230) on this 1672x941 image.
+Restore the white and blue robot fingers where the brush overlapped them, and restore the dark glowing background/circuitry behind the brush elsewhere. Keep the robot fingers in precisely their current caught/closed gripping pose, now gripping empty air. Preserve the released human hand in precisely its current pose.
+Constraints: All other artwork must remain exactly the same: left human hand pose and position, right robot hand pose and position, colorful sweeping paint strokes on the left, blue circuitry graphics on the right, dark textured atmosphere, dots, lights and grid. Do not put any brush in either hand. Do not open or otherwise change the robot hand. Do not add anything. Keep original sharp illustration style, colors, and lighting. Preserve original 1672x941 framing and aspect. No text. No watermarks.

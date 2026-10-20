@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SynthArt Synergy 2.0 — Committee Registration | SLIIT Kandy UNI</title>
+<meta name="description" content="Join the organizing committee of SynthArt Synergy 2.0 — the art and technology exhibition of the Faculty of Computing, SLIIT Kandy UNI. Applications open.">
+<meta name="theme-color" content="#0B1526">
+<meta property="og:title" content="SynthArt Synergy 2.0 — Committee Registration">
+<meta property="og:description" content="Where art meets technology. Build the second edition with us.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" as="image" href="assets/hero-before.png" fetchpriority="high">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__bar" data-progress></span></div>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="aura aura--warm" aria-hidden="true"></div>
+<div class="aura aura--cool" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" data-header>
+  <div class="nav-shell">
+    <a class="brand" href="#top" aria-label="SynthArt Synergy 2.0 — home">
+      <span class="brand__mark">
+        <img src="assets/logo-mark.png" alt="" width="46" height="46" decoding="async">
+      </span>
+      <span class="brand__text">
+        <strong>SynthArt</strong>
+        <em>Synergy <b>2.0</b></em>
+      </span>
+    </a>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#domains">Committees</a>
+      <a href="#structure">Structure</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn--sm btn--primary" href="#register">Register</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <p class="kicker reveal">
+          <span class="kicker__pulse" aria-hidden="true"></span>
+          SynthArt Synergy <b>2.0</b> · Committee registration
+        </p>
+
+        <h1 class="hero__title reveal" data-delay="1">
+          <span class="hero__line">Where <span class="grad">art</span></span>
+          <span class="hero__line">meets <span class="grad grad--cool">technology</span></span>
+        </h1>
+
+        <p class="hero__lede reveal" data-delay="2">
+          The second edition of the Faculty of Computing's art-and-technology exhibition is being
+          built from the ground up. We are assembling the committee that will design it, stage it
+          and run it.
+        </p>
+
+        <div class="hero__actions reveal" data-delay="3">
+          <a class="btn btn--primary btn--lg" href="#register">
+            Register for the committee
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#domains">See the seven committees</a>
+        </div>
+
+        <dl class="hero__meta reveal" data-delay="4">
+          <div>
+            <dt>Venue</dt>
+            <dd data-venue>SLIIT Kandy UNI, Pallekele</dd>
+          </div>
+          <div>
+            <dt>Organised by</dt>
+            <dd>Faculty of Computing</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Original before/after artwork with an independently moving brush. -->
+      <div class="scene" data-scene>
+        <div class="scene__glow" aria-hidden="true"></div>
+        <div class="scene__floor" aria-hidden="true"></div>
+
+        <div class="ring ring--a" aria-hidden="true"><span class="ring__dot"></span></div>
+        <div class="ring ring--b" aria-hidden="true"><span class="ring__dot ring__dot--cool"></span></div>
+
+        <div class="art reveal" data-art>
+          <div class="art__float">
+            <svg class="art__frame" viewBox="0 0 1672 941" width="1672" height="941"
+              role="img" aria-labelledby="handoff-title" data-handoff data-handoff-state="loading">
+              <title id="handoff-title">An artist passes a colourful paintbrush to a robot hand.</title>
+              <defs>
+                <!-- Keep only the brush from the original after image. All
+                     layers share source coordinates, including on mobile. -->
+                <clipPath id="handoff-brush-cut" clipPathUnits="userSpaceOnUse">
+                  <path d="M 674 540 L 918 385 L 920 381 L 962 355 L 967 350
+                    L 1007 326 L 1013 313 L 1023 316
+                    C 1030 305 1032 294 1046 284
+                    C 1073 260 1099 255 1124 248
+                    C 1140 243 1150 238 1158 228
+                    C 1156 247 1145 275 1134 293
+                    C 1120 320 1100 337 1080 344
+                    L 1060 348 L 1037 346 L 1025 340
+                    L 1016 349 L 981 373 L 977 379 L 935 403
+                    L 926 404 L 682 547 Q 672 550 674 540 Z"/>
+                </clipPath>
+                <radialGradient id="handoff-catch-light">
+                  <stop stop-color="#FFF2CE" stop-opacity=".8"/>
+                  <stop offset=".35" stop-color="#54C8E8" stop-opacity=".3"/>
+                  <stop offset="1" stop-color="#54C8E8" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <image class="art__plate art__layer" data-handoff-clean href="assets/hero-clean-v2.png"
+                width="1672" height="941" aria-hidden="true"/>
+              <image class="art__plate art__layer" data-handoff-receive href="assets/hero-after-clean-v2.png"
+                width="1672" height="941" aria-hidden="true"/>
+              <g class="art__brush art__layer" data-handoff-brush aria-hidden="true">
+                <image href="assets/hero-after.png" width="1672" height="941"
+                  clip-path="url(#handoff-brush-cut)"/>
+              </g>
+              <image class="art__plate" data-handoff-before href="assets/hero-before.png"
+                width="1672" height="941" aria-hidden="true"/>
+              <image class="art__plate art__layer" data-handoff-after href="assets/hero-after.png"
+                width="1672" height="941" aria-hidden="true"/>
+              <g class="art__catch art__layer" data-handoff-catch aria-hidden="true">
+                <circle cx="921" cy="401" r="88" fill="url(#handoff-catch-light)"/>
+                <circle cx="921" cy="401" r="28" fill="none" stroke="#ADFAFF" stroke-width="2"/>
+                <path d="M 875 373 l -10 -8 M 946 362 l 5 -13 M 964 416 l 14 4"
+                  fill="none" stroke="#FFE7C4" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <button class="handoff-replay" type="button" data-handoff-replay hidden>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 10a8 8 0 1 1 1 7M4 4v6h6" stroke="currentColor"
+              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Replay handoff
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Digital painting</span><i></i><span>Algorithmic art</span><i></i><span>VR experiences</span><i></i>
+      <span>Interactive installations</span><i></i><span>Creative coding</span><i></i><span>Game zone</span><i></i>
+      <span>Digital painting</span><i></i><span>Algorithmic art</span><i></i><span>VR experiences</span><i></i>
+      <span>Interactive installations</span><i></i><span>Creative coding</span><i></i><span>Game zone</span><i></i>
+    </div>
+  </div>
+
+  <!-- ============ COUNTDOWN ============ -->
+  <div class="ticker">
+    <div class="container ticker__inner">
+      <p class="ticker__label">Registration deadline</p>
+      <div class="countdown" data-countdown aria-label="Time remaining until registration closes">
+        <div class="cd"><span class="cd__num" data-cd="days">00</span><span class="cd__unit">Days</span></div>
+        <div class="cd"><span class="cd__num" data-cd="hours">00</span><span class="cd__unit">Hours</span></div>
+        <div class="cd"><span class="cd__num" data-cd="minutes">00</span><span class="cd__unit">Minutes</span></div>
+        <div class="cd"><span class="cd__num" data-cd="seconds">00</span><span class="cd__unit">Seconds</span></div>
+      </div>
+      <p class="ticker__date"><b data-deadline>29 October 2026</b> · <span data-venue>SLIIT Kandy UNI</span></p>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">The story</p>
+        <h2>One exhibition. Two disciplines.<br>A second edition.</h2>
+        <p class="section-head__lede">
+          SynthArt Synergy began as the Faculty of Computing's premiere art-and-technology
+          exhibition — two days, seven working committees and a single idea: creativity is not
+          replaced by technology, it is amplified by it.
+        </p>
+      </header>
+
+      <div class="about-grid">
+        <article class="panel reveal">
+          <h3 class="panel__title">What 1.0 built</h3>
+          <ul class="tick-list">
+            <li><strong>An inaugural edition</strong> hosted by the Faculty of Computing at SLIIT Kandy UNI, Pallekele.</li>
+            <li><strong>A live exhibition</strong> of digital paintings, interactive installations, VR experiences and algorithmic art.</li>
+            <li><strong>A judged competition</strong> with published criteria, a judging panel and a cash-prize ceremony.</li>
+            <li><strong>An industry day</strong> — ribbon cutting, oil-lamp lighting, keynote, panel discussion and awards.</li>
+            <li><strong>Reach beyond campus</strong> — ten schools invited, alongside artists and the public.</li>
+          </ul>
+        </article>
+
+        <article class="panel panel--accent reveal" data-delay="1">
+          <h3 class="panel__title">What 2.0 needs from you</h3>
+          <p>
+            The second edition keeps the format that worked and raises the bar. That means a
+            committee that can plan a calendar, hold a budget, design a gallery and keep a stage on
+            time — not just carry a title.
+          </p>
+          <div class="chips">
+            <span class="chip-sm">Planning</span>
+            <span class="chip-sm">Design</span>
+            <span class="chip-sm">Production</span>
+            <span class="chip-sm">Hospitality</span>
+            <span class="chip-sm">Marketing</span>
+            <span class="chip-sm">Exhibition curation</span>
+          </div>
+          <p class="panel__foot">Applications are open to every undergraduate of the faculty.</p>
+        </article>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat">
+          <span class="stat__num" data-count="2">2</span>
+          <span class="stat__label">Days of exhibition</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="7">7</span>
+          <span class="stat__label">Working committees</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="15">15</span>
+          <span class="stat__label">Core members</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="10">10</span>
+          <span class="stat__label">Schools invited</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOMAINS ============ -->
+  <section class="section section--tinted" id="domains">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">Committees · seven domains</p>
+        <h2>Choose where you build</h2>
+        <p class="section-head__lede">
+          Work is divided across seven domains so nothing lands on one desk. Every domain is led by
+          two to four members with a named lead, its own plan and its own deadline.
+        </p>
+      </header>
+
+      <div class="domain-grid">
+        <article class="card reveal" data-tilt>
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18M9 16l2 2 4-4"/>
+            </svg>
+          </span>
+          <h3>Event Coordination</h3>
+          <p>Owns the calendar, the run-of-show and the room. Keeps every other committee on schedule.</p>
+          <ul class="card__tags"><li>Run-of-show</li><li>Guest handling</li><li>Food &amp; beverage</li><li>Venue</li></ul>
+          <p class="card__foot">2 – 4 members</p>
+        </article>
+
+        <article class="card reveal" data-tilt data-delay="1">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 4h8v4.5a4 4 0 0 1-8 0V4Z"/><path d="M8 5.5H5.5A3 3 0 0 0 8.5 8.5M16 5.5h2.5a3 3 0 0 1-3 3"/><path d="M12 12.5V16M9 20h6M10.2 16h3.6l.7 4h-5l.7-4Z"/>
+            </svg>
+          </span>
+          <h3>Competition</h3>
+          <p>Writes the rules and criteria, confirms participants, runs the judging and the prize board.</p>
+          <ul class="card__tags"><li>Rules</li><li>Judging</li><li>Participants</li><li>Prizes</li></ul>
+          <p class="card__foot">2 – 4 members</p>
+        </article>
+
+        <article class="card reveal" data-tilt data-delay="2">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="3" width="6" height="10.5" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/>
+            </svg>
+          </span>
+          <h3>Media &amp; Compering</h3>
+          <p>Designs every post, countdown and ticket; finalises the script and announces on stage.</p>
+          <ul class="card__tags"><li>Design</li><li>Social</li><li>Scripts</li><li>Stage</li></ul>
+          <p class="card__foot">3 – 4 members</p>
+        </article>
+
+        <article class="card reveal" data-tilt>
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a9 9 0 1 0 0 18c1.8 0 2.2-1.5 1.3-2.6-.9-1.1-.1-2.6 1.4-2.6H18a3 3 0 0 0 3-3c0-5.1-4-9.8-9-9.8Z"/>
+              <circle cx="8.6" cy="10" r="1.1" fill="currentColor" stroke="none"/>
+              <circle cx="12" cy="7.6" r="1.1" fill="currentColor" stroke="none"/>
+              <circle cx="15.6" cy="10" r="1.1" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <h3>Decoration</h3>
+          <p>Turns the building into a gallery — podium, oil lamp, entrances, backdrop and category zones.</p>
+          <ul class="card__tags"><li>Backdrop</li><li>Gallery</li><li>Staging</li><li>Props</li></ul>
+          <p class="card__foot">2 – 4 members</p>
+        </article>
+
+        <article class="card reveal" data-tilt data-delay="1">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="8" width="18" height="12.5" rx="2"/><path d="M3 12h18M12 8v12.5"/>
+              <path d="M12 8S9.4 3.4 7 4.6 8.4 8 12 8Zm0 0s2.6-4.6 5-3.4S15.6 8 12 8Z"/>
+            </svg>
+          </span>
+          <h3>Gifts &amp; Souvenirs</h3>
+          <p>Sources tokens for guests and sponsors, prints certificates, writes tags and packs the gifts.</p>
+          <ul class="card__tags"><li>Souvenirs</li><li>Certificates</li><li>Sponsors</li><li>Packing</li></ul>
+          <p class="card__foot">2 – 3 members</p>
+        </article>
+
+        <article class="card reveal" data-tilt data-delay="2">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="11" rx="5.5"/><path d="M7 10.2v3.6M5.2 12h3.6M16 10.6h.01M18.2 13.4h.01"/>
+            </svg>
+          </span>
+          <h3>Game Zone</h3>
+          <p>Designs and runs the interactive play area that keeps visitors in the building longer.</p>
+          <ul class="card__tags"><li>Interactive</li><li>Build</li><li>Hosting</li><li>Safety</li></ul>
+          <p class="card__foot">3 – 4 members</p>
+        </article>
+
+        <article class="card reveal" data-tilt>
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="13" rx="2"/><circle cx="8.6" cy="8.8" r="1.4"/>
+              <path d="M21 13.5 16.5 9 10 15.5"/><path d="M8 21h8"/>
+            </svg>
+          </span>
+          <h3>Exhibition</h3>
+          <p>Curates the works, tags the artwork, briefs the guides and supports the judges on the floor.</p>
+          <ul class="card__tags"><li>Curation</li><li>Tags</li><li>Guides</li><li>Tours</li></ul>
+          <p class="card__foot">3 – 4 members</p>
+        </article>
+
+        <article class="card card--cta reveal" data-tilt data-delay="1">
+          <h3>Not sure yet?</h3>
+          <p>Pick a first and second choice on the form — we will place you where your strengths fit best.</p>
+          <a class="btn btn--primary btn--sm" href="#register">Start your application</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STRUCTURE ============ -->
+  <section class="section" id="structure">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">Structure</p>
+        <h2>How the committee is organised</h2>
+        <p class="section-head__lede">
+          Two tiers run the committee: a chairperson and vice chairperson at the top, and six
+          management roles beneath them. Every seat is open through the application form.
+        </p>
+      </header>
+
+      <div class="ladder">
+        <div class="ladder__tier reveal">
+          <p class="ladder__label"><span>01</span> Leadership</p>
+          <div class="role-grid role-grid--two">
+            <article class="role">
+              <h3>Chairperson</h3>
+              <p>Holds the vision, the calendar and the final call on every committee decision.</p>
+            </article>
+            <article class="role">
+              <h3>Vice Chairperson</h3>
+              <p>Deputises the chair and drives delivery across all seven domains.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="ladder__tier reveal">
+          <p class="ladder__label"><span>02</span> Management</p>
+          <div class="role-grid">
+            <article class="role">
+              <h3>Secretary</h3>
+              <p>Minutes, records and the paper trail between committees and the faculty.</p>
+            </article>
+            <article class="role">
+              <h3>Assistant Secretary</h3>
+              <p>Maintains member registers, handouts and the document set for the event.</p>
+            </article>
+            <article class="role">
+              <h3>Finance Manager</h3>
+              <p>Budget, purchasing and the cash-prize board.</p>
+            </article>
+            <article class="role">
+              <h3>Operations Manager</h3>
+              <p>Logistics, venue readiness, technical crew and the day-of floor.</p>
+            </article>
+            <article class="role">
+              <h3>PR Manager</h3>
+              <p>Invitations, school and industry contact, and outward communication.</p>
+            </article>
+            <article class="role">
+              <h3>Marketing &amp; Media Manager</h3>
+              <p>Campaign design, social media and the visual identity of 2.0.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="section section--tinted" id="process">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">Process</p>
+        <h2>From application to onboarding</h2>
+        <p class="section-head__lede">Four steps, roughly two weeks end to end. We read every submission.</p>
+      </header>
+
+      <ol class="process">
+        <li class="process__step reveal">
+          <span class="process__num">01</span>
+          <h3>Submit the form</h3>
+          <p>About five minutes. Choose a primary and a secondary domain, and tell us what you would contribute.</p>
+        </li>
+        <li class="process__step reveal" data-delay="1">
+          <span class="process__num">02</span>
+          <h3>Short screening</h3>
+          <p>We check eligibility and match your interests to the domain that needs them.</p>
+        </li>
+        <li class="process__step reveal" data-delay="2">
+          <span class="process__num">03</span>
+          <h3>A short conversation</h3>
+          <p>Ten minutes with the leadership team — an interview, not an examination.</p>
+        </li>
+        <li class="process__step reveal" data-delay="3">
+          <span class="process__num">04</span>
+          <h3>Onboarding</h3>
+          <p>The 2.0 committee is published and the planning work starts immediately.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ REGISTER ============ -->
+  <section class="section" id="register">
+    <div class="container">
+      <div class="register-panel reveal">
+        <div class="register-panel__glow" aria-hidden="true"></div>
+
+        <div class="register-grid">
+          <div class="register-copy">
+            <p class="eyebrow">Applications open</p>
+            <h2>Register for the<br>SynthArt 2.0 committee</h2>
+            <p class="register-lead">
+              The registration form is hosted on Google Forms, so you can apply from any device and
+              get a receipt in your inbox.
+            </p>
+
+            <ul class="tick-list tick-list--compact">
+              <li>Open to every undergraduate of the Faculty of Computing.</li>
+              <li>No prior committee experience required.</li>
+              <li>One application per student.</li>
+            </ul>
+
+            <div class="register-actions">
+              <!-- data-form-link fills href from CONFIG.formUrl in main.js -->
+              <a class="btn btn--primary btn--lg" href="#" data-form-link target="_blank" rel="noopener noreferrer">
+                Open the application form
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <button class="btn btn--ghost" type="button" data-copy-link>
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="9" y="9" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M15 5.5A2.5 2.5 0 0 0 12.5 3H5.5A2.5 2.5 0 0 0 3 5.5v7A2.5 2.5 0 0 0 5.5 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+                Copy link
+              </button>
+            </div>
+
+            <p class="register-note">
+              Applications close <strong data-deadline>29 October 2026</strong>
+            </p>
+          </div>
+
+          <aside class="register-aside">
+            <p class="aside-title">Have this ready</p>
+            <ol class="mini-steps">
+              <li><span>01</span><div><h3>Your details</h3><p>Student ID, faculty, year and semester, email, mobile.</p></div></li>
+              <li><span>02</span><div><h3>Your committee choice</h3><p>One primary and one secondary domain from the seven.</p></div></li>
+              <li><span>03</span><div><h3>Your portfolio</h3><p>Optional — a Behance, GitHub or drive link with past work.</p></div></li>
+              <li><span>04</span><div><h3>Your pitch</h3><p>Around 150 words on what you would build with the committee.</p></div></li>
+            </ol>
+            <p class="status-pill">
+              <span class="status-pill__dot" aria-hidden="true"></span>
+              Form status: <strong data-form-status>Check</strong>
+            </p>
+          </aside>
+        </div>
+
+        <!-- Embed area: switches on when CONFIG.embedForm = true -->
+        <div class="form-embed" data-form-embed hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section--tinted" id="faq">
+    <div class="container container--narrow">
+      <header class="section-head section-head--center reveal">
+        <p class="eyebrow">Questions</p>
+        <h2>Before you apply</h2>
+      </header>
+
+      <div class="faq reveal">
+        <details class="faq__item">
+          <summary>Who can apply for the committee?<span class="faq__mark" aria-hidden="true"></span></summary>
+          <div class="faq__body"><p>Every undergraduate of the Faculty of Computing at SLIIT Kandy UNI — including the orientation batch and both first-year semesters. Seats are balanced across all three groups.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Do I need previous committee experience?<span class="faq__mark" aria-hidden="true"></span></summary>
+          <div class="faq__body"><p>No. What matters is reliability and the willingness to own a task end to end. Most of the 1.0 team were first-timers.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Can I apply for more than one committee?<span class="faq__mark" aria-hidden="true"></span></summary>
+          <div class="faq__body"><p>Yes — the form asks for a primary and a secondary domain. You will be placed in one of them, so it is not an additional workload.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>How much time does it take?<span class="faq__mark" aria-hidden="true"></span></summary>
+          <div class="faq__body"><p>Light for most of the planning window — a weekly check-in and your own tasks. It gets heavier in the final month before the event, which is when every committee is on the floor.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Is there a registration fee?<span class="faq__mark" aria-hidden="true"></span></summary>
+          <div class="faq__body"><p>No. Committee registration is free. Expenses for the event itself are handled by the finance committee.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>What happens after I submit?<span class="faq__mark" aria-hidden="true"></span></summary>
+          <div class="faq__body"><p>Google Forms shows a confirmation screen and emails you a copy of your responses. Shortlisted applicants are contacted for a short conversation, and the final committee is announced by the faculty.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="closing">
+    <div class="container closing__inner reveal">
+      <h2>Build the second edition with us.</h2>
+      <p>Seven committees. One exhibition. Applications close <span data-deadline>29 October 2026</span>.</p>
+      <a class="btn btn--primary btn--lg" href="#register" data-form-link target="_blank" rel="noopener noreferrer">Register now</a>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a class="brand brand--footer" href="#top">
+        <span class="brand__mark">
+          <img src="assets/logo-mark.png" alt="" width="46" height="46" decoding="async">
+        </span>
+        <span class="brand__text">
+          <strong>SynthArt</strong>
+          <em>Synergy <b>2.0</b></em>
+        </span>
+      </a>
+      <p>Where art meets technology. The art-and-technology exhibition of the Faculty of Computing, SLIIT Kandy UNI.</p>
+    </div>
+
+    <nav class="footer__nav" aria-label="Footer">
+      <h2>Explore</h2>
+      <a href="#about">About the event</a>
+      <a href="#domains">Committees</a>
+      <a href="#structure">Structure</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="footer__contact">
+      <h2>Find us</h2>
+      <p>Faculty of Computing<br>SLIIT Kandy UNI<br>Pallekele, Kandy<br>Sri Lanka</p>
+      <a class="footer__link" href="#register" data-form-link target="_blank" rel="noopener noreferrer">Committee registration</a>
+    </div>
+  </div>
+
+  <div class="container footer__base">
+    <p>© <span data-year>2026</span> SynthArt Synergy · Faculty of Computing, SLIIT Kandy UNI</p>
+    <a class="to-top" href="#top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</footer>
+
+<div class="toast" data-toast role="status" aria-live="polite"></div>
+
+<script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# Local previews, browser profiles and generated verification output
+.preview/
+
+# Local reference material and intermediate artwork
+/*.docx
+/*.pdf
+/New Text Document*.txt
+/_*.png
+/beofre.png
+/after .png
+/logo.jpeg
+/assets/hero-art.png
+/assets/hero-art.webp
+/assets/brush.png
+/assets/brush.webp
+/assets/brush.json
+
+# Local tooling and secrets
+.agents/
+.codex/
+.aws/
+.env
+.env.*
+!.env.example
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
