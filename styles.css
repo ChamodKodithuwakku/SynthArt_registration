@@ -130,6 +130,296 @@ button { font: inherit; color: inherit; }
   white-space: nowrap;
 }
 
+/* ---------- Opening sequence ------------------------------------------- */
+.intro { display: none; }
+html.intro-active,
+.intro-active body { overflow: hidden; }
+.intro-active #site-content { visibility: hidden; }
+.intro-active .intro {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 36px 24px 80px;
+  background: #050b16;
+  outline: none;
+}
+.intro__ambient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 30% 35%, rgba(236, 150, 66, .12), transparent 48%),
+    radial-gradient(ellipse at 72% 65%, rgba(84, 200, 232, .14), transparent 48%),
+    radial-gradient(ellipse at 50% 100%, rgba(139, 123, 247, .09), transparent 55%);
+}
+.intro__ambient::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .35;
+  background-image:
+    radial-gradient(circle at 18% 24%, var(--orange-soft) 1px, transparent 2px),
+    radial-gradient(circle at 80% 30%, var(--cyan) 1px, transparent 2px),
+    radial-gradient(circle at 24% 72%, var(--cyan) 1px, transparent 2px),
+    radial-gradient(circle at 86% 76%, var(--orange-soft) 1px, transparent 2px),
+    radial-gradient(circle at 52% 14%, var(--violet) 1px, transparent 2px);
+}
+.intro__visuals {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  /* Keep the centre quiet so the branding remains the focus. */
+  mask-image: radial-gradient(ellipse 38% 62% at 50% 48%, transparent 20%, #000 90%);
+}
+.intro__canvas { width: 100%; height: 100%; }
+.intro__canvas path,
+.intro__canvas use,
+.intro__canvas circle { vector-effect: non-scaling-stroke; }
+.intro__traces {
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  opacity: .17;
+}
+.intro__traces use { stroke-dasharray: 100; }
+.intro__signals { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.intro__signal {
+  color: var(--cyan);
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-dasharray: 3 27 1 69;
+  opacity: .6;
+  filter: drop-shadow(0 0 4px currentColor);
+}
+.intro__signal--warm { color: var(--orange-soft); }
+.intro__nodes {
+  fill: var(--navy-950);
+  stroke: var(--cyan);
+  stroke-width: 1;
+  opacity: .38;
+}
+.intro__paint { fill: none; stroke: url(#intro-paint); stroke-linecap: round; }
+.intro__stroke {
+  stroke-width: 2;
+  stroke-dasharray: 45 75;
+  opacity: .3;
+}
+.intro__stroke--broad { stroke-width: 14; opacity: .055; }
+.intro__stroke--fine { stroke-width: 1; opacity: .2; }
+.intro__sparks { fill: var(--orange-soft); opacity: .45; }
+.intro__sparks circle:nth-child(even) { fill: var(--cyan); }
+.intro[data-playing] .intro__traces use { animation: intro-wire-in 1.8s ease-out both; }
+.intro[data-playing] .intro__signal {
+  animation: intro-signal-flow 4.8s linear var(--signal-delay, 0s) infinite;
+}
+.intro[data-playing] .intro__stroke { animation: intro-paint-flow 7s ease-in-out infinite alternate; }
+.intro[data-playing] .intro__stroke:nth-child(even) { animation-delay: -2.5s; }
+.intro[data-playing] .intro__sparks circle { animation: intro-spark-drift 4s ease-in-out infinite alternate; }
+.intro[data-playing] .intro__sparks circle:nth-child(even) { animation-delay: -2s; }
+@keyframes intro-wire-in {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes intro-signal-flow {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes intro-paint-flow {
+  from { stroke-dashoffset: 45; transform: translateY(8px); }
+  to { stroke-dashoffset: -45; transform: translateY(-8px); }
+}
+@keyframes intro-spark-drift {
+  from { transform: translateY(6px); opacity: .4; }
+  to { transform: translateY(-12px); opacity: 1; }
+}
+.intro__content {
+  width: min(100%, 560px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.intro__university {
+  width: 100%;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid rgba(248, 196, 138, .6);
+  border-radius: 18px;
+  background: #fffaf1;
+  box-shadow: 0 18px 80px rgba(236, 150, 66, .09);
+}
+.intro__university img { width: 100%; height: auto; }
+.intro__presents {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 22px 0 30px;
+  color: var(--ink-2);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  padding-left: .42em;
+}
+.intro__presents span {
+  height: 1px;
+  width: 32px;
+  background: linear-gradient(90deg, transparent, var(--orange));
+}
+.intro__presents span:last-child { rotate: 180deg; }
+.intro__emblem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 196px;
+  height: 196px;
+}
+.intro__emblem::before {
+  content: "";
+  position: absolute;
+  inset: -28px;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(84, 200, 232, .16), transparent 68%);
+}
+.intro__emblem img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(84, 200, 232, .12);
+}
+.intro__orbit {
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+.intro__orbit--warm {
+  border-top-color: var(--orange);
+  border-right-color: rgba(236, 150, 66, .2);
+  rotate: -35deg;
+}
+.intro__orbit--cool {
+  inset: -10px;
+  border-bottom-color: var(--cyan);
+  border-left-color: rgba(84, 200, 232, .16);
+  rotate: -35deg;
+}
+.intro__title {
+  margin-top: 24px;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+.intro__title span {
+  color: var(--orange-soft);
+  background: linear-gradient(110deg, var(--orange-soft), var(--orange));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.intro__tagline {
+  margin-top: 12px;
+  color: var(--ink-2);
+  font-size: clamp(.75rem, 2.1vw, 1rem);
+  line-height: 1.5;
+  letter-spacing: .12em;
+}
+.intro__progress {
+  position: absolute;
+  bottom: 38px;
+  left: 50%;
+  translate: -50% 0;
+  width: min(180px, 30vw);
+  height: 2px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .08);
+}
+.intro__progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--orange), var(--cyan));
+  transform-origin: left;
+}
+.intro__skip {
+  position: absolute;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  padding: 10px 4px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: .75rem;
+  cursor: pointer;
+}
+.intro__skip span { margin-left: 8px; color: var(--orange-soft); }
+.intro__skip:hover { color: var(--ink); }
+.intro__university,
+.intro__presents,
+.intro__emblem,
+.intro__title,
+.intro__tagline { opacity: 0; }
+.intro[data-playing] { animation: intro-exit .8s ease-in 7.2s both; }
+.intro[data-playing] .intro__university { animation: intro-reveal 1s var(--ease-out) both; }
+.intro[data-playing] .intro__presents { animation: intro-reveal .7s ease-out 1.25s both; }
+.intro[data-playing] .intro__emblem { animation: intro-emblem 1.3s var(--ease-out) 2.5s both; }
+.intro[data-playing] .intro__title { animation: intro-reveal 1s var(--ease-out) 4.1s both; }
+.intro[data-playing] .intro__tagline { animation: intro-reveal .8s var(--ease-out) 4.8s both; }
+.intro[data-playing] .intro__orbit--warm { animation: intro-orbit 4.7s ease-out 2.5s both; }
+.intro[data-playing] .intro__orbit--cool { animation: intro-orbit 4.7s ease-out 2.5s reverse both; }
+.intro[data-playing] .intro__progress span { animation: intro-progress 7.2s linear both; }
+@keyframes intro-reveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes intro-emblem {
+  from { opacity: 0; transform: scale(.82) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes intro-orbit {
+  from { transform: rotate(-160deg); }
+  to { transform: rotate(140deg); }
+}
+@keyframes intro-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes intro-exit {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@media (max-width: 600px) {
+  .intro__university { border-radius: 12px; }
+  .intro__emblem { width: 170px; height: 170px; }
+  .intro__emblem img { width: 140px; height: 140px; }
+  .intro__progress { left: 24px; translate: 0 0; }
+}
+@media (max-height: 620px) {
+  .intro-active .intro { padding-top: 20px; padding-bottom: 64px; }
+  .intro__content { width: min(100%, 400px); }
+  .intro__university { padding: 14px 20px; }
+  .intro__presents { margin: 12px 0 18px; }
+  .intro__emblem { width: 120px; height: 120px; }
+  .intro__emblem img { width: 100px; height: 100px; }
+  .intro__title { margin-top: 12px; font-size: 2.4rem; }
+}
+@media (max-height: 440px) {
+  .intro__content { width: min(100%, 340px); }
+  .intro__university { padding: 10px 18px; }
+  .intro__presents { margin: 8px 0 12px; }
+  .intro__emblem { width: 94px; height: 94px; }
+  .intro__emblem img { width: 80px; height: 80px; }
+  .intro__title { margin-top: 8px; font-size: 2rem; }
+  .intro__tagline { margin-top: 6px; font-size: .75rem; }
+}
+
 /* ---------- 3. Ambient background layers -------------------------------- */
 #bg-canvas {
   position: fixed;
@@ -1512,6 +1802,13 @@ button { font: inherit; color: inherit; }
   .card { transform: none; }
   .marquee__track { animation: none; }
   .handoff-replay { display: none; }
+  .intro[data-playing],
+  .intro[data-playing] * { animation: none !important; }
+  .intro__university,
+  .intro__presents,
+  .intro__emblem,
+  .intro__title,
+  .intro__tagline { opacity: 1; transform: none; }
 }
 
 @media (prefers-contrast: more) {
@@ -1525,6 +1822,9 @@ button { font: inherit; color: inherit; }
 
 /* ---------- 24. Print --------------------------------------------------- */
 @media print {
+  .intro-active .intro { display: none; }
+  .intro-active #site-content { visibility: visible; }
+  html.intro-active, .intro-active body { overflow: visible; }
   #bg-canvas, .aura, .grain, .scroll-progress, .site-header, .marquee, .scene { display: none !important; }
   body { background: #fff; color: #111; }
   .js .reveal { opacity: 1; translate: 0 0; }

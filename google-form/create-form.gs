@@ -66,7 +66,7 @@ function createCommitteeForm() {
 
   form.setDescription(
     'SynthArt Synergy 2.0 — where art meets technology.\n\n' +
-    'The Faculty of Computing is assembling the organizing committee for the second edition of ' +
+    'The Department of Computing is assembling the organizing committee for the second edition of ' +
     'SynthArt Synergy at SLIIT Kandy UNI, Pallekele.\n\n' +
     'Fifteen core seats are open across seven working committees. Tell us who you are, which ' +
     'committee you want, and what you would bring to it. This takes about 6 minutes.\n\n' +
@@ -172,7 +172,7 @@ function createCommitteeForm() {
   );
 
   pick('Faculty', null,
-    ['Faculty of Computing', 'School of Business'], true);
+    ['Department of Computing', 'School of Business'], true);
 
   list('Degree programme', null, [
     'BSc (Hons) Information Technology',

@@ -78,7 +78,7 @@ Five pages, 25 questions, ~6 minutes. Required fields marked ★.
 | 2 | Student registration number ★ | text, pattern `^[A-Za-z]{2}[0-9]{8}$` |
 | 3 | University email ★ | text, email pattern |
 | 4 | Mobile / WhatsApp ★ | text, `^0[0-9]{9}$` |
-| 5 | Faculty ★ | Faculty of Computing / School of Business |
+| 5 | Faculty ★ | Department of Computing / School of Business |
 | 6 | Degree programme ★ | list of six SLIIT programmes + Other |
 | 7 | Academic batch ★ | Orientation / 1Y·1S / 1Y·2S |
 

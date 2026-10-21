@@ -35,6 +35,54 @@ const CONFIG = {
   const FORM_URL = String(CONFIG.formUrl || '').trim();
   const HAS_FORM = /^https?:\/\//i.test(FORM_URL);
 
+  /* Eight-second opening sequence. The home animations wait for its exit. */
+  (function openingIntro() {
+    const intro = $('[data-intro]');
+    const content = $('#site-content');
+    if (!intro || !content || !document.documentElement.classList.contains('intro-active')) return;
+
+    const skip = $('[data-intro-skip]', intro);
+    let complete = false;
+    let timer;
+    content.inert = true;
+    intro.setAttribute('role', 'dialog');
+    intro.setAttribute('aria-modal', 'true');
+    intro.dataset.playing = 'true';
+    intro.focus({ preventScroll: true });
+
+    function finish() {
+      if (complete) return;
+      complete = true;
+      window.clearTimeout(timer);
+      window.clearTimeout(window.synthartIntroFallback);
+      const restoreFocus = intro.contains(document.activeElement);
+      document.documentElement.classList.remove('intro-active');
+      content.inert = false;
+      intro.remove();
+      document.removeEventListener('keydown', onKeydown);
+      if (restoreFocus) {
+        const destination = location.hash && document.getElementById(location.hash.slice(1));
+        const target = destination || $('#main');
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+        target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
+      }
+      document.dispatchEvent(new Event('synthart:intro-complete'));
+    }
+
+    function onKeydown(event) {
+      if (event.key === 'Escape') finish();
+      if (event.key === 'Tab') {
+        event.preventDefault();
+        skip.focus();
+      }
+    }
+
+    skip.addEventListener('click', finish);
+    document.addEventListener('keydown', onKeydown);
+    timer = window.setTimeout(finish, 8000);
+  })();
+
   /* ------------------------------------------------------------------ *
    * 1. Text that comes from CONFIG
    * ------------------------------------------------------------------ */
@@ -227,7 +275,12 @@ const CONFIG = {
       },
       { rootMargin: '0px 0px -6% 0px', threshold: 0.06 }
     );
-    revealEls.forEach((el) => revealObserver.observe(el));
+    const observeReveals = () => revealEls.forEach((el) => revealObserver.observe(el));
+    if (document.documentElement.classList.contains('intro-active')) {
+      document.addEventListener('synthart:intro-complete', observeReveals, { once: true });
+    } else {
+      observeReveals();
+    }
   }
 
   /* ------------------------------------------------------------------ *
@@ -448,6 +501,7 @@ const CONFIG = {
 
     function updatePlayback() {
       if (!assetsReady || motion.matches || artwork.dataset.handoffState === 'complete') return;
+      if (document.documentElement.classList.contains('intro-active')) return;
       if (!animations.length) buildSequence();
       if (inView && !document.hidden) {
         animations.forEach((animation) => {
@@ -589,6 +643,7 @@ const CONFIG = {
     });
 
     document.addEventListener('visibilitychange', updatePlayback);
+    document.addEventListener('synthart:intro-complete', updatePlayback, { once: true });
     motion.addEventListener('change', () => {
       stop();
       prepare();

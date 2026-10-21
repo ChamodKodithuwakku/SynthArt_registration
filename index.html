@@ -4,18 +4,119 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SynthArt Synergy 2.0 — Committee Registration | SLIIT Kandy UNI</title>
-<meta name="description" content="Join the organizing committee of SynthArt Synergy 2.0 — the art and technology exhibition of the Faculty of Computing, SLIIT Kandy UNI. Applications open.">
+<meta name="description" content="Join the organizing committee of SynthArt Synergy 2.0 — the art and technology exhibition of the Department of Computing, SLIIT Kandy UNI. Applications open.">
 <meta name="theme-color" content="#0B1526">
 <meta property="og:title" content="SynthArt Synergy 2.0 — Committee Registration">
 <meta property="og:description" content="Where art meets technology. Build the second edition with us.">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.png" sizes="64x64" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" as="image" href="assets/sliit-kandy-uni.png?v=2" fetchpriority="high">
+<link rel="preload" as="image" href="assets/logo-mark.png" fetchpriority="high">
 <link rel="preload" as="image" href="assets/hero-before.png" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
-<script>document.documentElement.classList.add('js');</script>
+<script>
+  document.documentElement.classList.add('js', 'intro-active');
+  // Always reveal the site if the main script is unavailable or interrupted.
+  window.synthartIntroFallback = window.setTimeout(function () {
+    document.documentElement.classList.remove('js', 'intro-active');
+    var intro = document.querySelector('[data-intro]');
+    var content = document.getElementById('site-content');
+    if (intro) intro.remove();
+    if (content) content.removeAttribute('inert');
+    document.dispatchEvent(new Event('synthart:intro-complete'));
+  }, 10000);
+</script>
 </head>
 <body>
+<!-- The supplied university logo is used unchanged, on a light backdrop. -->
+<section class="intro" data-intro tabindex="-1" aria-label="SLIIT Kandy UNI presents SynthArt 2.0">
+  <div class="intro__ambient" aria-hidden="true"></div>
+  <div class="intro__visuals" aria-hidden="true">
+    <svg class="intro__canvas" viewBox="0 0 1440 900" preserveAspectRatio="none" focusable="false">
+      <defs>
+        <linearGradient id="intro-paint" x1="0" y1="1" x2="1" y2="0">
+          <stop stop-color="#EC9642"/>
+          <stop offset=".45" stop-color="#D879B7"/>
+          <stop offset="1" stop-color="#54C8E8"/>
+        </linearGradient>
+        <path id="intro-wire-1" pathLength="100" d="M-20 170H100L160 230V300L220 360H370L410 400"/>
+        <path id="intro-wire-2" pathLength="100" d="M-20 270H80L125 315V410L190 475H330"/>
+        <path id="intro-wire-3" pathLength="100" d="M90-20V80L230 220V260L285 315H395"/>
+        <path id="intro-wire-4" pathLength="100" d="M-20 730H150L220 660V610L280 550H385"/>
+        <path id="intro-wire-5" pathLength="100" d="M130 920V810L225 715H310L365 660"/>
+        <path id="intro-wire-6" pathLength="100" d="M1460 160H1330L1260 230V290L1190 360H1070L1030 400"/>
+        <path id="intro-wire-7" pathLength="100" d="M1460 275H1360L1315 320V410L1250 475H1110"/>
+        <path id="intro-wire-8" pathLength="100" d="M1350-20V80L1210 220V260L1155 315H1045"/>
+        <path id="intro-wire-9" pathLength="100" d="M1460 730H1290L1220 660V610L1160 550H1055"/>
+        <path id="intro-wire-10" pathLength="100" d="M1310 920V810L1215 715H1130L1075 660"/>
+      </defs>
+      <!-- Fine circuit traces with short signals travelling along each route. -->
+      <g class="intro__traces">
+        <use href="#intro-wire-1"/><use href="#intro-wire-2"/>
+        <use href="#intro-wire-3"/><use href="#intro-wire-4"/>
+        <use href="#intro-wire-5"/><use href="#intro-wire-6"/>
+        <use href="#intro-wire-7"/><use href="#intro-wire-8"/>
+        <use href="#intro-wire-9"/><use href="#intro-wire-10"/>
+      </g>
+      <g class="intro__signals">
+        <use class="intro__signal" href="#intro-wire-1" style="--signal-delay: -.8s"/>
+        <use class="intro__signal intro__signal--warm" href="#intro-wire-2" style="--signal-delay: -2.4s"/>
+        <use class="intro__signal" href="#intro-wire-3" style="--signal-delay: -3.6s"/>
+        <use class="intro__signal intro__signal--warm" href="#intro-wire-4" style="--signal-delay: -1.7s"/>
+        <use class="intro__signal" href="#intro-wire-5" style="--signal-delay: -4.2s"/>
+        <use class="intro__signal" href="#intro-wire-6" style="--signal-delay: -2.1s"/>
+        <use class="intro__signal intro__signal--warm" href="#intro-wire-7" style="--signal-delay: -.4s"/>
+        <use class="intro__signal" href="#intro-wire-8" style="--signal-delay: -3.1s"/>
+        <use class="intro__signal" href="#intro-wire-9" style="--signal-delay: -4.5s"/>
+        <use class="intro__signal intro__signal--warm" href="#intro-wire-10" style="--signal-delay: -1.2s"/>
+      </g>
+      <g class="intro__nodes">
+        <circle cx="410" cy="400" r="4"/><circle cx="330" cy="475" r="3"/>
+        <circle cx="395" cy="315" r="3"/><circle cx="385" cy="550" r="4"/>
+        <circle cx="365" cy="660" r="3"/><circle cx="1030" cy="400" r="4"/>
+        <circle cx="1110" cy="475" r="3"/><circle cx="1045" cy="315" r="3"/>
+        <circle cx="1055" cy="550" r="4"/><circle cx="1075" cy="660" r="3"/>
+      </g>
+      <!-- Loose painted curves soften the geometric circuitry. -->
+      <g class="intro__paint">
+        <path class="intro__stroke intro__stroke--broad" pathLength="100"
+          d="M-80 660C90 680 240 580 210 450S100 240 305 135"/>
+        <path class="intro__stroke" pathLength="100"
+          d="M-60 690C140 685 285 560 240 430S155 220 355 115"/>
+        <path class="intro__stroke intro__stroke--fine" pathLength="100"
+          d="M-30 710C180 690 315 540 270 410S205 200 390 100"/>
+        <path class="intro__stroke intro__stroke--broad" pathLength="100"
+          d="M1510 400C1280 340 1130 480 1210 625S1320 800 1090 900"/>
+        <path class="intro__stroke" pathLength="100"
+          d="M1500 370C1260 305 1085 475 1175 645S1260 825 1030 920"/>
+      </g>
+      <g class="intro__sparks">
+        <circle cx="300" cy="190" r="2.5"/><circle cx="170" cy="570" r="3"/>
+        <circle cx="380" cy="760" r="2"/><circle cx="1160" cy="160" r="2"/>
+        <circle cx="1290" cy="590" r="2.5"/><circle cx="1080" cy="785" r="3"/>
+      </g>
+    </svg>
+  </div>
+  <div class="intro__content">
+    <div class="intro__university">
+      <img src="assets/sliit-kandy-uni.png?v=2" alt="SLIIT Kandy UNI — Heritage, Knowledge, Impact"
+        width="3272" height="694" fetchpriority="high">
+    </div>
+    <p class="intro__presents"><span></span>presents<span></span></p>
+    <div class="intro__emblem">
+      <span class="intro__orbit intro__orbit--warm" aria-hidden="true"></span>
+      <span class="intro__orbit intro__orbit--cool" aria-hidden="true"></span>
+      <img src="assets/logo-mark.png" alt="SynthArt" width="160" height="160" fetchpriority="high">
+    </div>
+    <p class="intro__title">SynthArt <span>2.0</span></p>
+    <p class="intro__tagline">Where art meets technology</p>
+  </div>
+  <div class="intro__progress" aria-hidden="true"><span></span></div>
+  <button class="intro__skip" type="button" data-intro-skip>Skip intro <span aria-hidden="true">↗</span></button>
+</section>
+
+<div id="site-content">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__bar" data-progress></span></div>
@@ -71,7 +172,7 @@
         </h1>
 
         <p class="hero__lede reveal" data-delay="2">
-          The second edition of the Faculty of Computing's art-and-technology exhibition is being
+          The second edition of the Department of Computing's art-and-technology exhibition is being
           built from the ground up. We are assembling the committee that will design it, stage it
           and run it.
         </p>
@@ -93,7 +194,7 @@
           </div>
           <div>
             <dt>Organised by</dt>
-            <dd>Faculty of Computing</dd>
+            <dd>Department of Computing</dd>
           </div>
         </dl>
       </div>
@@ -195,7 +296,7 @@
         <p class="eyebrow">The story</p>
         <h2>One exhibition. Two disciplines.<br>A second edition.</h2>
         <p class="section-head__lede">
-          SynthArt Synergy began as the Faculty of Computing's premiere art-and-technology
+          SynthArt Synergy began as the Department of Computing's premiere art-and-technology
           exhibition — two days, seven working committees and a single idea: creativity is not
           replaced by technology, it is amplified by it.
         </p>
@@ -205,7 +306,7 @@
         <article class="panel reveal">
           <h3 class="panel__title">What 1.0 built</h3>
           <ul class="tick-list">
-            <li><strong>An inaugural edition</strong> hosted by the Faculty of Computing at SLIIT Kandy UNI, Pallekele.</li>
+            <li><strong>An inaugural edition</strong> hosted by the Department of Computing at SLIIT Kandy UNI, Pallekele.</li>
             <li><strong>A live exhibition</strong> of digital paintings, interactive installations, VR experiences and algorithmic art.</li>
             <li><strong>A judged competition</strong> with published criteria, a judging panel and a cash-prize ceremony.</li>
             <li><strong>An industry day</strong> — ribbon cutting, oil-lamp lighting, keynote, panel discussion and awards.</li>
@@ -228,7 +329,7 @@
             <span class="chip-sm">Marketing</span>
             <span class="chip-sm">Exhibition curation</span>
           </div>
-          <p class="panel__foot">Applications are open to every undergraduate of the faculty.</p>
+          <p class="panel__foot">Applications are open to every undergraduate of the department.</p>
         </article>
       </div>
 
@@ -392,7 +493,7 @@
           <div class="role-grid">
             <article class="role">
               <h3>Secretary</h3>
-              <p>Minutes, records and the paper trail between committees and the faculty.</p>
+              <p>Minutes, records and the paper trail between committees and the department.</p>
             </article>
             <article class="role">
               <h3>Assistant Secretary</h3>
@@ -470,7 +571,7 @@
             </p>
 
             <ul class="tick-list tick-list--compact">
-              <li>Open to every undergraduate of the Faculty of Computing.</li>
+              <li>Open to every undergraduate of the Department of Computing.</li>
               <li>No prior committee experience required.</li>
               <li>One application per student.</li>
             </ul>
@@ -500,7 +601,7 @@
           <aside class="register-aside">
             <p class="aside-title">Have this ready</p>
             <ol class="mini-steps">
-              <li><span>01</span><div><h3>Your details</h3><p>Student ID, faculty, year and semester, email, mobile.</p></div></li>
+              <li><span>01</span><div><h3>Your details</h3><p>Student ID, department, year and semester, email, mobile.</p></div></li>
               <li><span>02</span><div><h3>Your committee choice</h3><p>One primary and one secondary domain from the seven.</p></div></li>
               <li><span>03</span><div><h3>Your portfolio</h3><p>Optional — a Behance, GitHub or drive link with past work.</p></div></li>
               <li><span>04</span><div><h3>Your pitch</h3><p>Around 150 words on what you would build with the committee.</p></div></li>
@@ -529,7 +630,7 @@
       <div class="faq reveal">
         <details class="faq__item">
           <summary>Who can apply for the committee?<span class="faq__mark" aria-hidden="true"></span></summary>
-          <div class="faq__body"><p>Every undergraduate of the Faculty of Computing at SLIIT Kandy UNI — including the orientation batch and both first-year semesters. Seats are balanced across all three groups.</p></div>
+          <div class="faq__body"><p>Every undergraduate of the Department of Computing at SLIIT Kandy UNI — including the orientation batch and both first-year semesters. Seats are balanced across all three groups.</p></div>
         </details>
         <details class="faq__item">
           <summary>Do I need previous committee experience?<span class="faq__mark" aria-hidden="true"></span></summary>
@@ -549,7 +650,7 @@
         </details>
         <details class="faq__item">
           <summary>What happens after I submit?<span class="faq__mark" aria-hidden="true"></span></summary>
-          <div class="faq__body"><p>Google Forms shows a confirmation screen and emails you a copy of your responses. Shortlisted applicants are contacted for a short conversation, and the final committee is announced by the faculty.</p></div>
+          <div class="faq__body"><p>Google Forms shows a confirmation screen and emails you a copy of your responses. Shortlisted applicants are contacted for a short conversation, and the final committee is announced by the department.</p></div>
         </details>
       </div>
     </div>
@@ -578,7 +679,7 @@
           <em>Synergy <b>2.0</b></em>
         </span>
       </a>
-      <p>Where art meets technology. The art-and-technology exhibition of the Faculty of Computing, SLIIT Kandy UNI.</p>
+      <p>Where art meets technology. The art-and-technology exhibition of the Department of Computing, SLIIT Kandy UNI.</p>
     </div>
 
     <nav class="footer__nav" aria-label="Footer">
@@ -592,13 +693,13 @@
 
     <div class="footer__contact">
       <h2>Find us</h2>
-      <p>Faculty of Computing<br>SLIIT Kandy UNI<br>Pallekele, Kandy<br>Sri Lanka</p>
+      <p>Department of Computing<br>SLIIT Kandy UNI<br>Pallekele, Kandy<br>Sri Lanka</p>
       <a class="footer__link" href="#register" data-form-link target="_blank" rel="noopener noreferrer">Committee registration</a>
     </div>
   </div>
 
   <div class="container footer__base">
-    <p>© <span data-year>2026</span> SynthArt Synergy · Faculty of Computing, SLIIT Kandy UNI</p>
+    <p>© <span data-year>2026</span> SynthArt Synergy · Department of Computing, SLIIT Kandy UNI</p>
     <a class="to-top" href="#top" aria-label="Back to top">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
@@ -606,6 +707,7 @@
 </footer>
 
 <div class="toast" data-toast role="status" aria-live="polite"></div>
+</div>
 
 <script src="main.js" defer></script>
 </body>

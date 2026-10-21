@@ -22,6 +22,7 @@ JavaScript — no build step, no frameworks, no CDN, no external fonts. Open
 | Asset | Source | Notes |
 |---|---|---|
 | `assets/logo-mark.png` | `logo.jpeg` | Badge cropped to its circle, transparent corners, 160 px |
+| `assets/sliit-kandy-uni.png` | `Kandy UNI New Horizontal Logo (1).png` | Unchanged replacement university logo, 3272 × 694 |
 | `assets/favicon.png` · `assets/apple-touch-icon.png` | `logo.jpeg` | 64 px and 180 px circle crops |
 | `assets/hero-before.png` | `beofre.png` | Unchanged original opening frame, 1672 × 941 |
 | `assets/hero-after.png` | `after .png` | Unchanged original final frame; also supplies the brush through an SVG clip path |
@@ -109,6 +110,17 @@ shows “Registration closed”. No exhibition dates are displayed.
 ---
 
 ## 5. Customise the look
+
+On each page load, an **8-second opening intro** shows the original SLIIT Kandy
+UNI logo, then “presents”, the SynthArt badge with orange/cyan orbits, and
+“SynthArt 2.0” with “Where art meets technology” underneath. It fades out to the home page. **Skip intro** or Escape opens the
+page immediately. The home reveal and brush handoff wait until the intro ends.
+The intro background combines softly lit circuit paths, moving signals, flowing
+paint strokes and drifting specks, drawn with SVG and CSS around the branding.
+Reduced motion shows the complete branding without movement for the same duration.
+Without JavaScript the home page opens directly; a 10-second fallback also unlocks
+the page if the main script fails. Intro timing is in `openingIntro()` in `main.js`
+and the opening-sequence rules in `styles.css`.
 
 Colours are CSS custom properties at the top of `styles.css`:
 
